@@ -11,7 +11,7 @@
   </parent>
   <groupId>com.seol</groupId>
   <artifactId>seol</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>latest</version>
   <name>seol</name>
   <description>Ai request and response</description>
 

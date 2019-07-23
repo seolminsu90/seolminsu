@@ -2,7 +2,15 @@
 
 ## jar 다운로드 링크
 
-https://github.com/seolminsu90/seolminsu/blob/master/build/seol-0.0.1-SNAPSHOT.jar
+https://github.com/seolminsu90/seolminsu/blob/master/build/seol-latest.jar
+
+## 실행
+
+java -jar seol-latest.jar
+
+## 접속
+
+localhost:8080/
 
 # 참조
 
