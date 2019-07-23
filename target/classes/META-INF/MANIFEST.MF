@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: seol
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ms.seol
+Implementation-Vendor-Id: com.seol
+Build-Jdk: 1.8.0_191-1-ojdkbuild
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/seol
+Created-By: Maven Integration for Eclipse
+
