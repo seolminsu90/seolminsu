@@ -19,11 +19,13 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    // 회원 가입
     @PutMapping("/api/user")
     public Response<User> signin(@RequestBody @Valid UserDto userDto) {
         return userService.signin(userDto);
     }
 
+    // 로그인
     @PostMapping("/api/user")
     public Response<User> login(HttpServletResponse response, @RequestBody @Valid UserDto userDto) {
         return userService.login(response, userDto);

@@ -14,6 +14,6 @@ public class ControllerExceptionHandler {
     protected ExceptionResponse exceptions(HttpServletRequest request, Exception e) {
         ExceptionResponse response = new ExceptionResponse();
         response.setCode(e.getMessage());
-        return response;
+        return response; 
     }
 }

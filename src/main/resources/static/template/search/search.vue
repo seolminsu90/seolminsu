@@ -6,6 +6,7 @@
       v-on:keyup="enter"
       placeholder="검색어 입력"
       v-model="searchObj.query"
+      maxlength="50"
     >
     <button id="searchBtn" type="button" v-on:click="search">검색</button>
     <section>
@@ -34,7 +35,7 @@
         <ol id="handmade-pagination" v-if="pagination.show">
           <li v-on:click="searchPage(-1)">이전</li>
           <template v-for="i in pagination.endPage">
-            <li v-if="i >= pagination.startPage" v-bind:class="{ on : i==pagination.currentPage}" v-on:click="search(null, i)" >{{i}}</li>
+            <li v-if="i >= pagination.startPage" v-bind:key="i" v-bind:class="{ on : i==pagination.currentPage}" v-on:click="search(null, i)" >{{i}}</li>
           </template>
           <li v-on:click="searchPage(1)">다음</li>
         </ol>
@@ -160,7 +161,7 @@
         historyList: [],
         searchObj: {
           query: "",
-          page: 1
+          page: null
         },
         searchResult: {},
         searchDetail: {}
@@ -266,9 +267,9 @@
       search: function(e, currentPage) {
         let $this = this;
         $this.closeDetail();
-        $this.searchObj.page = 1;
+        $this.searchObj.page = null;
 
-        if ($this.searchObj.query == "") {
+        if ($this.searchObj.query.trim() == "") {
           return alert("검색어를 입력해주세요.");
         }
 
@@ -300,7 +301,7 @@
                 $this.$set($this, "pagination", paginationObj);
               } else {
                 $this.pagingInit(
-                  $this.searchObj.page,
+                  ($this.searchObj.page == null)?1:$this.searchObj.page,
                   resultData.meta.pageable_count
                 );
               }
@@ -308,7 +309,6 @@
             }
           })
           .catch(err => {
-            console.log(err);
             return alert("오류가 발생하였습니다.");
           });
       },

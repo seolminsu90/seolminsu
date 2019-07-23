@@ -19,22 +19,25 @@ import com.seol.service.SearchService;
 @RestController
 public class SearchController {
 
-	@Autowired
-	SearchService searchService;
+    @Autowired
+    SearchService searchService;
 
-	@GetMapping("/api/keyword")
-	public Response<List<Keyword>> popularKeyword() {
-		return searchService.popularKeyword();
-	}
+    // 인기 키워드 목록
+    @GetMapping("/api/keyword")
+    public Response<List<Keyword>> popularKeyword() {
+        return searchService.popularKeyword();
+    }
 
-	@GetMapping("/api/history")
-	public Response<List<History>> keywordHistory(HttpServletRequest request, @RequestAttribute String id) {
-		return searchService.keywordHistory(id);
-	}
+    // 나의 검색 기록
+    @GetMapping("/api/history")
+    public Response<List<History>> keywordHistory(HttpServletRequest request, @RequestAttribute String id) {
+        return searchService.keywordHistory(id);
+    }
 
-	@GetMapping("/api/search")
-	public Response<Search> searchBook(@RequestParam(value = "query", required = true) String query,
-			@RequestParam(value = "page", required = false) Integer page, @RequestAttribute String id) {
-		return searchService.searchBooks(id, query, page);
-	}
+    // 책 검색
+    @GetMapping("/api/search")
+    public Response<Search> searchBook(@RequestParam(value = "query", required = true) String query,
+            @RequestParam(value = "page", required = false) Integer page, @RequestAttribute String id) {
+        return searchService.searchBooks(id, query, page);
+    }
 }

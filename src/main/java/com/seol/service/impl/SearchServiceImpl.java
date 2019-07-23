@@ -51,13 +51,16 @@ public class SearchServiceImpl implements SearchService {
         response.setCode(ResponseCode.OK.getValue());
         response.setData(restService.searchKeyword(query, page));
 
-        History history = new History();
-        history.setId(id);
-        history.setKeyword(query);
-        history.setRegdate(LocalDateTime.now());
-        historyRepository.saveAndFlush(history);
+        // 초기 검색 시에만 Count 및 기록 저장
+        if (page == null) {
+            History history = new History();
+            history.setId(id);
+            history.setKeyword(query);
+            history.setRegdate(LocalDateTime.now());
+            historyRepository.saveAndFlush(history);
 
-        keywordRepository.upsertCount(query);
+            keywordRepository.upsertCount(query);
+        }
         return response;
     }
 
