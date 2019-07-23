@@ -12,11 +12,14 @@ java -jar seol-latest.jar
 
 localhost:8080/
 
-# 참조
+## 참조
 
-- 나눔고딕 웹 폰트 사용
-- Vue.js 사용
-- Moment.js 사용
-- id, pwd는 영,숫자만 4-20자까지 지원
+####나눔고딕 웹 폰트 사용
+-꾸밈 용도
+####Vue.js 사용
+-SPA 구현체로 선택
+####Moment.js 사용
+-날짜 변환 용도
+####id, pwd는 영,숫자만 4-20자까지 지원
 
 
