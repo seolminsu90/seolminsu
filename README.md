@@ -2,7 +2,7 @@
 
 ## jar 다운로드 링크
 
-https://github.com/seolminsu90/seolminsu/blob/master/target/seol-0.0.1-SNAPSHOT.jar
+https://github.com/seolminsu90/seolminsu/blob/master/build/seol-0.0.1-SNAPSHOT.jar
 
 # 참조
 
