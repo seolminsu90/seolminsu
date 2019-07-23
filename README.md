@@ -2,7 +2,7 @@
 
 ## jar 다운로드 링크
 
-https://github.com/seolminsu90/seolminsu/blob/master/build/seol-latest.jar
+https://github.com/seolminsu90/seolminsu/blob/master/buildfile/seol-latest.jar
 
 ## 실행
 
