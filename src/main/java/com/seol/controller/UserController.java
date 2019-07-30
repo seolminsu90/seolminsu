@@ -5,7 +5,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +19,7 @@ public class UserController {
     UserService userService;
 
     // 회원 가입
-    @PutMapping("/api/user")
+    @PostMapping("/api/user")
     public Response<User> signin(@RequestBody @Valid UserDto userDto) {
         return userService.signin(userDto);
     }
