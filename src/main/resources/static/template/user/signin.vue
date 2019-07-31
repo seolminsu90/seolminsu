@@ -85,7 +85,7 @@
         }
 
         axios
-          .put("/api/user", $this.user, {
+          .post("/api/user", $this.user, {
             headers: { "Content-Type": "application/json" }
           })
           .then(response => {
